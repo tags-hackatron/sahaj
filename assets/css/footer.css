@@ -1,0 +1,47 @@
+#footer {
+  color: white;
+  
+  margin: 1% auto;
+  text-align: center;
+  background-color:#4b5fcb;
+  padding: 50px 50px;
+}
+
+.footer-icons {
+  color: white;
+  padding: 0 15px;
+  margin-bottom: 20px;
+}
+
+.footer-icons:hover {
+  color: black;
+}
+
+.center {
+  text-align: center;
+  margin: auto auto;
+}
+
+.contact {
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  color: #4b5fcb;
+}
+
+.contactSection {
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+}
+
+.contactIcons {
+  color: #4b5fcb;
+}
+
+.noMargine {
+  margin: 0;
+}
+
+.someMargine {
+  margin-left: 100px;
+  margin-right: 100px
+}
