@@ -10,7 +10,7 @@ const complaint = mongoose.model('Complaint');
 const admission = mongoose.model('Admission');
 //------------ Welcome Route ------------//
 router.get('/',ensureAuthenticated, (req, res) => {
-    res.render('welcome');
+    res.render('dash');
 });
 
 //------------ Dashboard Route ------------//
