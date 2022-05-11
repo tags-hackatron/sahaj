@@ -7,11 +7,13 @@
 
 const mongoose = require('mongoose')
 
-mongoose.connect('mongodb+srv://tags:tags0123@cluster0.bs4zj.mongodb.net/Hostel_Management', {useNewUrlParser: true, useUnifiedTopology: true}, (err) => {
-
+mongoose.connect('mongodb+srv://sahajtags:sahajtags@cluster0.si5eg.mongodb.net/Sahaj?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true}, (err) => {
+// mongodb+srv://sahajtags:<password>@cluster0.si5eg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
     if (!err) { console.log('MongoDB Connection Succeeded'); }
     else { console.log('Error in DB Connection: ' + err); }
 
 });
 
 require('../models/User');
+
+// mongodb+srv://sahajtags:<password>@cluster0.si5eg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
