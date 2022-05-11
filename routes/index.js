@@ -155,4 +155,7 @@ router.get("/pay", (req, res) => {
 router.get("/dataentry", (req, res) => {
     res.render("dataentry.ejs");
 });
+router.get("/patient", (req, res) => {
+    res.render("patient.ejs");
+});
 module.exports = router;
