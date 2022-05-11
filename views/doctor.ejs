@@ -57,20 +57,17 @@
 
     </div>
     <div>
-
-        <% appointmentData.forEach(data)  { %>
+          <% appointmentData.forEach(function(data){%>
             <p>
-                <% data.date %>
+                <%= data.date %>
             </p>
             <p>
-                <% data.doctor %>
+                <%= data.doctor %>
             </p>
             <p>
-                <% data.message %>
+                <%= data.message %>
             </p>
             <% }); %>
-
-
     </div>
 
 
