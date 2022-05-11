@@ -6,8 +6,8 @@ const { ensureAuthenticated } = require('../config/checkAuth')
 // const Admission = require('../models/Admission');
 const Appointment = require('../models/Appointment');
 // const Complaint = require('../models/User');
-const complaint = mongoose.model('Appointment');
-const admission = mongoose.model('Admission');
+// const Appointment = mongoose.model('Appointment');
+
 //------------ Welcome Route ------------//
 router.get('/', (req, res) => {
     res.render('dash');
@@ -19,6 +19,7 @@ router.get('/dashboard', ensureAuthenticated, (req, res) => res.render('dash', {
     name: req.user.name
 }));
 router.get('/doctor', (req, res) => {
+
 
     res.render('doctor')
 })
@@ -57,6 +58,24 @@ router.get('/admin/tables', ensureAuthenticated, async(req, res) => {
         .catch(err => {
             res.status(500).send({ message: "Erro retrieving user with id " })
         })
+});
+
+router.post('/patient', (req, res) => {
+    const Appoint = new Appointment();
+    Appoint.date = req.body.date;
+    Appoint.doctor = req.body.doctor;
+    Appoint.message = req.body.message;
+    Appoint.save()
+        .then(user => {
+            req.flash(
+                'success_msg',
+                'appointment filled successfully.'
+            );
+            console.log(user);
+            res.redirect('/patient');
+        })
+        .catch(err => console.log(err));
+
 });
 
 
