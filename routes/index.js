@@ -128,6 +128,7 @@ router.get("/pay", (req, res) => {
     res.render("razorpay.ejs");
 });
 
+
   router.post("/order", (req, res) => {
     // instance.orders.create({
     //   amount: 50000,
@@ -147,4 +148,11 @@ router.get("/pay", (req, res) => {
       res.json(order);
     });
   });
+
+
+//   enter into data form
+
+router.get("/dataentry", (req, res) => {
+    res.render("dataentry.ejs");
+});
 module.exports = router;

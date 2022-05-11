@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Medicare</title>
+
+    <!-- Main css -->
+    <link href="../assets/css/Data entry.css" rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href="/css/nav.css">  -->
+</head>
+
+<body style="background-color: #1977cc;">
+    <div class="main">
+     <!-- {{>nav}}  -->
+
+
+        <section class="signup" >
+            
+            <div class="container">
+                <div class="signup-content">
+                    <form action="/add/data" method="post" id="signup-form" class="signup-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="aadharNumber">Aadhar Card Number</label>
+                                <input type="text" class="form-input" name="aadharNumber" id="aadharNumber" placeholder="e.g 9945 1141 2512"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="patientName">Patient Name</label>
+                                <input type="text" class="form-input" name="patientName" id="patientName" placeholder="e.g Pranav Patil"/>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="aadharNumber">Report if any</label>
+                                    <input type="file" class="form-input" name="aadharNumber" id="aadharNumber" />
+                                </div>
+                                <div class="form-group">
+                                    <label for="doctorName">Doctor Name</label>
+                                    <input type="text" class="form-input" name="doctorName" id="doctorame" placeholder="e.g Dr.Metgud"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-margin">
+                                <label>Clinic/Hospital Name</label>
+                                <input type="text" class="form-input" name="hospitalName" />
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="forWhat1">Clinic/Hospital Location</label>
+                                <textarea class="form-control" id="textAreaExample1" rows="4" cols="40" name="hospitalLocation">
+                            </textarea>
+                            </div>
+                        </div>
+
+                        <div id="rounds">
+                            <div id="singleRound">
+                                <div class="form-row">
+                                    <div class="form-margin">
+                                        <label>medicine 1</label>
+                                        <input type="text" class="form-input" name="medicine" />
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="forWhat1">For What?</label>
+                                        <textarea class="form-control" id="textAreaExample1" rows="4" cols="40" name="forWhat1">
+                                    </textarea>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group form-icon">
+                                        <label for="startDate">Start Date</label>
+                                        <input type="text" class="form-input" name="startDate1" id="startDate" placeholder="MM-DD-YYYY" />
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group form-icon">
+                                        <label for="tillDate">Till Date</label>
+                                        <input type="text" class="form-input" name="tillDate1" id="tillDate" placeholder="MM-DD-YYYY" />
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-radio">
+                                        <label for="level">Please select one of the Time to take medicine</label>
+                                        <!-- <div class="form-flex"> -->
+                                            <input type="checkbox" id="morning" name="morning1" value="morning"  >
+                                            <label for="morning">morning</label>
+                                            <input type="checkbox" id="afternoon" name="afternoon1" value="afternoon">
+                                            <label for="afternoon">afternoon</label>
+                                            <input type="checkbox" id="night" name="night1" value="night">
+                                            <label for="night">night</label><br>
+                                        <!-- </div> -->
+                                    </div>
+                                </div>
+                                  
+                            </div>
+                         <button onclick="render()" id="demo" class="addButton">Add Medicine </button>
+                        </div>
+
+
+                        <div class="form-row">
+                            <div class="form-margin">
+                                <label class="form-label" for="textAreaExample">Diet</label>
+                                <textarea class="form-control" id="textAreaExample1" rows="5" cols="65" name="diet"></textarea>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" id="submit" class="form-submit" value="Submit" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- JS -->
+    
+    <script src="../assets/js/data.js"></script>
+    <!-- <script src="main.js"></script>  -->
+
+</body>
+
+</html>
