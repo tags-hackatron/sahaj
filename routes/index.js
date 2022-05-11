@@ -9,7 +9,7 @@ const Complaint = require('../models/Complaint');
 const complaint = mongoose.model('Complaint');
 const admission = mongoose.model('Admission');
 //------------ Welcome Route ------------//
-router.get('/',ensureAuthenticated, (req, res) => {
+router.get('/', (req, res) => {
     res.render('dash');
 });
 
