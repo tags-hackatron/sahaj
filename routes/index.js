@@ -20,8 +20,19 @@ router.get('/dashboard', ensureAuthenticated, (req, res) => res.render('dash', {
 }));
 router.get('/doctor', (req, res) => {
 
-
-    res.render('doctor')
+    Appointment.find()
+        .then(data => {
+            if (!data) console.log("Failed to retrive complaints");
+            else {
+                res.render("doctor", {
+                    appointmentData: data
+                })
+                console.log("Data recieved  ");
+            }
+        })
+        .catch(err => {
+            res.status(500).send({ message: "Erro retrieving user with id " })
+        })
 })
 
 router.get('/adminlogin', (req, res) => res.render('adminlogin'))
