@@ -3,10 +3,10 @@ const router = express.Router();
 const mongoose = require('mongoose')
 const { ensureAuthenticated } = require('../config/checkAuth')
 
-const Admission = require('../models/Admission');
-const Complaint = require('../models/Complaint');
+// const Admission = require('../models/Admission');
+const Appointment = require('../models/Appointment');
 // const Complaint = require('../models/User');
-const complaint = mongoose.model('Complaint');
+const complaint = mongoose.model('Appointment');
 const admission = mongoose.model('Admission');
 //------------ Welcome Route ------------//
 router.get('/', (req, res) => {
@@ -55,32 +55,32 @@ router.get('/admin/tables', ensureAuthenticated, async (req, res)=>{
   });
   
 
-router.get('/admission',ensureAuthenticated, (req, res) => res.render('admission'));
+// router.get('/admission',ensureAuthenticated, (req, res) => res.render('admission'));
 router.get('/complaint',ensureAuthenticated, (req, res) => res.render('complaint'));
 
-router.post('/admission', (req, res)=>{
-    const newAdmission = new Admission();
-    newAdmission.name = req.body.name;
-    newAdmission.email = req.body.email;
-    newAdmission.phone = req.body.phone;
-    newAdmission.prn = req.body.prn;
-    newAdmission.cgpa = req.body.cgpa;
-    newAdmission.department = req.body.department;
-    newAdmission.address = req.body.address;
-    newAdmission.caste = req.body.caste;
-    newAdmission.year = req.body.year;
-    newAdmission.gender = req.body.gender;
-    newAdmission.preference = req.body.preference;
- newAdmission.save()
- .then(user => {
-     req.flash(
-         'success_msg',
-         'Admission form filled successfully.'
-     );
-     res.redirect('/dashboard');
- })
- .catch(err => console.log(err));
-});
+// router.post('/admission', (req, res)=>{
+//     const newAdmission = new Admission();
+//     newAdmission.name = req.body.name;
+//     newAdmission.email = req.body.email;
+//     newAdmission.phone = req.body.phone;
+//     newAdmission.prn = req.body.prn;
+//     newAdmission.cgpa = req.body.cgpa;
+//     newAdmission.department = req.body.department;
+//     newAdmission.address = req.body.address;
+//     newAdmission.caste = req.body.caste;
+//     newAdmission.year = req.body.year;
+//     newAdmission.gender = req.body.gender;
+//     newAdmission.preference = req.body.preference;
+//  newAdmission.save()
+//  .then(user => {
+//      req.flash(
+//          'success_msg',
+//          'Admission form filled successfully.'
+//      );
+//      res.redirect('/dashboard');
+//  })
+//  .catch(err => console.log(err));
+// });
 
 router.post('/complaint', (req, res)=>{
     const newComplaint = new Complaint();
