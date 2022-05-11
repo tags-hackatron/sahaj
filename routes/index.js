@@ -158,4 +158,7 @@ router.get("/dataentry", (req, res) => {
 router.get("/patient", (req, res) => {
     res.render("patient.ejs");
 });
+router.get("/patientSearch", (req, res) => {
+    res.render("patientSearch.ejs");
+});
 module.exports = router;
