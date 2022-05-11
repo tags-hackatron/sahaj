@@ -5,6 +5,7 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
 
+
 const app = express();
 
 //------------ Passport Configuration ------------//
@@ -47,10 +48,10 @@ app.use(flash());
 
 //------------ Global variables ------------//
 app.use(function(req, res, next) {
-  res.locals.success_msg = req.flash('success_msg');
-  res.locals.error_msg = req.flash('error_msg');
-  res.locals.error = req.flash('error');
-  next();
+    res.locals.success_msg = req.flash('success_msg');
+    res.locals.error_msg = req.flash('error_msg');
+    res.locals.error = req.flash('error');
+    next();
 });
 //------------ Routes ------------//
 app.use('/', require('./routes/index'));
@@ -59,4 +60,3 @@ app.use('/auth', require('./routes/auth'));
 const PORT = process.env.PORT || 3001;
 
 app.listen(PORT, console.log(`Server running on PORT ${PORT}`));
-
