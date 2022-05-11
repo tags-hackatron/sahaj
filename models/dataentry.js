@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 //------------ Registration Schema ------------//
 
 const DataentrySchema = new mongoose.Schema({
-  adharNumber: {
+  aadharNumber: {
       type: Number,
       required: true
     },
@@ -12,8 +12,8 @@ const DataentrySchema = new mongoose.Schema({
       required: true
     },
     report: {
-      type: File,
-      required: true
+      type: String,
+      // required: true
     },
     doctorName: {
       type: String,

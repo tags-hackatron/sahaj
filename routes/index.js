@@ -6,8 +6,13 @@ const { ensureAuthenticated } = require('../config/checkAuth')
 // const Admission = require('../models/Admission');
 const Appointment = require('../models/Appointment');
 // const Complaint = require('../models/User');
+// <<<<<<< HEAD
+const complaint = mongoose.model('Appointment');
+// const admission = mongoose.model('Admission');
+// =======
 // const Appointment = mongoose.model('Appointment');
 
+// >>>>>>> 2d4499569453a1219a442dcc3041ee1d36faf216
 //------------ Welcome Route ------------//
 router.get('/', (req, res) => {
     res.render('dash');
@@ -90,7 +95,58 @@ router.post('/patient', (req, res) => {
 });
 
 
-router.get('/admission', ensureAuthenticated, (req, res) => res.render('admission'));
+router.post('/dataentry', (req, res) => {
+    const dataentry = new dataentry();
+    dataentry.aadharNumber = req.body.aadharNumber;
+    dataentry.patientName = req.body.patientName;
+    dataentry.report = req.body.report;
+    dataentry.doctorName = req.body.doctorName;
+    dataentry.hospitalName = req.body.hospitalName;
+    dataentry.hospitalLocation = req.body.hospitalLocation;
+
+    dataentry.medicine1 = req.body.medicine1;
+    dataentry.forWhat1 = req.body.forWhat1;
+    dataentry.startDate1 = req.body.startDate1;
+    dataentry.tillDate1 = req.body.tillDate1;
+    dataentry.morning1 = req.body.morning1;
+    dataentry.afternoon1 = req.body.afternoon1;
+    dataentry.night1 = req.body.night1;
+
+    dataentry.medicine2 = req.body.medicine2;
+    dataentry.forWhat2 = req.body.forWhat2;
+    dataentry.startDate2= req.body.startDate2;
+    dataentry.tillDate2 = req.body.tillDate2;
+    dataentry.morning2 = req.body.morning2;
+    dataentry.afternoon2 = req.body.afternoon2;
+    dataentry.night2 = req.body.night2;
+
+    
+    dataentry.medicine3 = req.body.medicine3;
+    dataentry.forWhat3 = req.body.forWhat3;
+    dataentry.startDate3= req.body.startDate3;
+    dataentry.tillDate3 = req.body.tillDate3;
+    dataentry.morning3 = req.body.morning3;
+    dataentry.afternoon3 = req.body.afternoon3;
+    dataentry.night3 = req.body.night3;
+
+    dataentry.diet = req.body.diet;
+
+
+    dataentry.save()
+        .then(user => {
+            req.flash(
+                'success_msg',
+                'appointment filled successfully.'
+            );
+            console.log(user);
+            res.redirect('/patient');
+        })
+        .catch(err => console.log(err));
+
+});
+
+
+// router.get('/admission', ensureAuthenticated, (req, res) => res.render('admission'));
 router.get('/complaint', ensureAuthenticated, (req, res) => res.render('complaint'));
 
 router.post('/admission', (req, res) => {
@@ -153,6 +209,7 @@ router.post('/adminlogin', (req, res) => {
 
 });
 const Razorpay = require("razorpay");
+const dataentry = require('../models/dataentry');
 
 const razorpay = new Razorpay({
     key_id: "rzp_test_nvhBWn23LWrMPJ",
