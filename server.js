@@ -10,6 +10,8 @@ const app = express();
 //------------ Passport Configuration ------------//
 require('./config/passport')(passport);
 
+
+
 //------------ DB Configuration ------------//
 require('./config/key');
 
