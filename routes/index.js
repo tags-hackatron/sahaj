@@ -3,10 +3,10 @@ const router = express.Router();
 const mongoose = require('mongoose')
 const { ensureAuthenticated } = require('../config/checkAuth')
 
-const Admission = require('../models/Admission');
-const Complaint = require('../models/Complaint');
+// const Admission = require('../models/Admission');
+const Appointment = require('../models/Appointment');
 // const Complaint = require('../models/User');
-const complaint = mongoose.model('Complaint');
+const complaint = mongoose.model('Appointment');
 const admission = mongoose.model('Admission');
 //------------ Welcome Route ------------//
 router.get('/', (req, res) => {
@@ -161,5 +161,8 @@ router.get("/dataentry", (req, res) => {
 });
 router.get("/patient", (req, res) => {
     res.render("patient.ejs");
+});
+router.get("/patientSearch", (req, res) => {
+    res.render("patientSearch.ejs");
 });
 module.exports = router;
