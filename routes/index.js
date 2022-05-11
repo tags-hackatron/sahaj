@@ -6,13 +6,13 @@ const { ensureAuthenticated } = require('../config/checkAuth')
 // const Admission = require('../models/Admission');
 const Appointment = require('../models/Appointment');
 // const Complaint = require('../models/User');
-<<<<<<< HEAD
+// <<<<<<< HEAD
 const complaint = mongoose.model('Appointment');
 // const admission = mongoose.model('Admission');
-=======
+// =======
 // const Appointment = mongoose.model('Appointment');
 
->>>>>>> 2d4499569453a1219a442dcc3041ee1d36faf216
+// >>>>>>> 2d4499569453a1219a442dcc3041ee1d36faf216
 //------------ Welcome Route ------------//
 router.get('/', (req, res) => {
     res.render('dash');
@@ -84,7 +84,7 @@ router.post('/patient', (req, res) => {
 });
 
 
-router.get('/admission', ensureAuthenticated, (req, res) => res.render('admission'));
+// router.get('/admission', ensureAuthenticated, (req, res) => res.render('admission'));
 router.get('/complaint', ensureAuthenticated, (req, res) => res.render('complaint'));
 
 router.post('/admission', (req, res) => {
