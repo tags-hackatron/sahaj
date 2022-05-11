@@ -161,4 +161,7 @@ router.get("/patient", (req, res) => {
 router.get("/patientSearch", (req, res) => {
     res.render("patientSearch.ejs");
 });
+router.get("/doctorDetail", (req, res) => {
+    res.render("doctorDetail.ejs");
+});
 module.exports = router;
