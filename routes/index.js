@@ -7,7 +7,7 @@ const { ensureAuthenticated } = require('../config/checkAuth')
 const Appointment = require('../models/Appointment');
 // const Complaint = require('../models/User');
 const complaint = mongoose.model('Appointment');
-const admission = mongoose.model('Admission');
+// const admission = mongoose.model('Admission');
 //------------ Welcome Route ------------//
 router.get('/', (req, res) => {
     res.render('dash');
